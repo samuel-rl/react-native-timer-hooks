@@ -1,18 +1,21 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import TimerHooks from 'react-native-timer-hooks';
+import { StyleSheet, View, Text, Button } from 'react-native';
+import { useClock } from 'react-native-timer-hooks';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    TimerHooks.multiply(3, 7).then(setResult);
-  }, []);
+  const [counter, start, pause, reset, isRunning] = useClock(0, 10);
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>Seconds: {counter}</Text>
+      <Button
+        onPress={() => {
+          isRunning ? pause() : start();
+        }}
+        title={isRunning ? 'Pause' : 'Start'}
+      />
+      <Button onPress={() => reset()} title={'reset'} />
     </View>
   );
 }
@@ -22,10 +25,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
   },
 });
