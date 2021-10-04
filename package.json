@@ -1,6 +1,6 @@
 {
   "name": "react-native-timer-hooks",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "simple hooks for timer",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -34,7 +34,13 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "clock",
+    "hooks",
+    "timer",
+    "seconds",
+    "minutes",
+    "milliseconds"
   ],
   "repository": "https://github.com/samuel3105/react-native-timer-hooks",
   "author": "Samuel <samuel310597@gmail.com> (https://github.com/samuel3105)",

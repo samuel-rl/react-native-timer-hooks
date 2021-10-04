@@ -14,11 +14,23 @@ npm install react-native-timer-hooks
 ---
 
 
+## Example
+
+
+<div align="center">
+  <img align="center" src="https://github.com/samuel3105/react-native-timer-hooks/blob/master/example/gifs/example.gif?raw=true" alt="image" />
+</div>
+
+
+---
+
+
 ## Import
 
 ```jsx
 import { useClock } from 'react-native-timer-hooks';
 ```
+
 
 ---
 
