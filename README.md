@@ -1,13 +1,20 @@
 <p align="center">
-  <a href="https://github.com/samuel3105" aria-label="Follow Samuel3105 on Github" target="_blank">
-    <img alt="Github: samuel3105" src="https://img.shields.io/github/followers/samuel3105.svg?label=Follow&style=for-the-badge&logo=github&logoColor=FFFFFF&labelColor=24292e&logoWidth=20&color=lightgray" target="_blank" />
+  <a href="https://github.com/samuel-rl" aria-label="Follow Samuel-rl on Github" target="_blank">
+    <img alt="Github: samuel-rl" src="https://img.shields.io/github/followers/samuel-rl.svg?label=Follow&style=for-the-badge&logo=github&logoColor=FFFFFF&labelColor=24292e&logoWidth=20&color=lightgray" target="_blank" />
   </a>
+</p>
+<p align="center">
+  <a href="https://twitter.com/ssamuel_rl" target="blank"><img src="https://img.shields.io/twitter/follow/ssamuel_rl?logo=twitter&style=for-the-badge" alt="ssamuel_rl" /></a>
 </p>
 
 
 ## [Install](https://www.npmjs.com/package/react-native-timer-hooks)
 
 ```bash
+yarn add react-native-timer-hooks
+
+or
+
 npm install react-native-timer-hooks
 ```
 
@@ -18,7 +25,7 @@ npm install react-native-timer-hooks
 
 
 <div align="center">
-  <img align="center" src="https://github.com/samuel3105/react-native-timer-hooks/blob/master/example/gifs/example.gif?raw=true" alt="image" />
+  <img align="center" src="https://github.com/samuel-rl/react-native-timer-hooks/blob/master/example/gifs/example.gif?raw=true" alt="image" />
 </div>
 
 
@@ -43,7 +50,11 @@ import { StyleSheet, View, Text, Button } from 'react-native';
 import { useClock } from 'react-native-timer-hooks';
 
 const Example = () => {
-   const [counter, start, pause, reset, isRunning] = useClock(0, 1000, false);
+  const [counter, start, pause, reset, isRunning] = useClock({
+    from: 0,
+    to: 60,
+    stopOnFinish: true,
+  });
 
   return (
     <View style={styles.container}>
@@ -77,6 +88,13 @@ The `useClock` hooks has the following parameters:
     <td><code>number</code></td>
     <td>The initial value of counter.</td>
     <td>✅</td>
+    <td><code>undefined</code></td>
+  </tr>
+   <tr>
+    <td><code>to</code></td>
+    <td><code>number</code></td>
+    <td>When the timer should stop.
+    <td>❌</td>
     <td><code>undefined</code></td>
   </tr>
   <tr>
