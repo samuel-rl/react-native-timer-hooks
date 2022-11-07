@@ -5,14 +5,12 @@ interface UseClockParams {
   to?: number;
   ms?: number;
   down?: boolean;
-  stopOnFinish?: boolean;
 }
 export const useClock = ({
   from,
   to,
   ms = 1000,
   down = false,
-  stopOnFinish = false,
 }: UseClockParams): [
   number,
   () => void,
@@ -39,16 +37,12 @@ export const useClock = ({
   useEffect(() => {
     intervalId.current = setInterval(() => {
       isRunning && setCounter(down ? counter - 1 : counter + 1);
-      if (
-        to !== undefined &&
-        (down ? counter <= to + 1 : counter >= to - 1) &&
-        stopOnFinish
-      ) {
+      if (to !== undefined && (down ? counter <= to + 1 : counter >= to - 1)) {
         pause();
       }
     }, ms);
     return () => clearInterval(intervalId.current);
-  }, [isRunning, counter, ms, down, to, reset, stopOnFinish]);
+  }, [isRunning, counter, ms, down, to, reset]);
 
   return [counter, start, pause, reset, isRunning];
 };

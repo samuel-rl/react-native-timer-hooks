@@ -5,10 +5,9 @@ import { useClock } from 'react-native-timer-hooks';
 
 export default function App() {
   const [counter, start, pause, reset, isRunning] = useClock({
-    from: 60,
+    from: 100,
     to: 0,
     ms: 10,
-    stopOnFinish: true,
     down: true,
   });
 
