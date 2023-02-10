@@ -29,7 +29,7 @@ export const useClock = ({
   const reset: (resetFrom?: number) => void = useCallback(
     (resetFrom?: number) => {
       clearInterval(intervalId.current);
-      setCounter(resetFrom ? resetFrom : from);
+      setCounter(resetFrom !== undefined ? resetFrom : from);
     },
     [from]
   );
